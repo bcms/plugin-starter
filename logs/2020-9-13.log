@@ -1,0 +1,36 @@
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35m[0m > Queue empty, continue with mounting. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [SwaggerController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [UserController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [AuthController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [GroupController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [TemplateController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [WidgetController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [LanguageController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [ApiKeyController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [MediaController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [EntryController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [FunctionController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35mcontroller[0m > [MyAwesomePluginController] mapping done. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:28:31 AM[0m] [1m[35mPurpleCheetah[0m [35m[0m > Initialized. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:29:18 AM[0m] [1m[35mRequestLogger[0m [35m[0m > POST: /api/auth/token/refresh 
+[43m[30m[WARN][0m [[36m10/13/2020, 10:29:18 AM[0m] [1m[35mAuthRequestHandler[0m [35mrefreshAccess[0m > 
+[33m{
+  "code": "a005",
+  "message": "Invalid authorization."
+}[0m 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:29:18 AM[0m] [1m[35mRequestLogger[0m [35m[0m > GET: /api/user/is-initialized 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:29:32 AM[0m] [1m[35mRequestLogger[0m [35m[0m > POST: /api/auth/login 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:29:32 AM[0m] [1m[35mSocketServer[0m [35m.allowConnection[0m > Incoming connection... 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:29:32 AM[0m] [1m[35mSocketServer[0m [35m.connection[0m > Socket "7OuRGP5VpRk0m49WAAAA" for group "global" connected successfully. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:29:32 AM[0m] [1m[35mRequestLogger[0m [35m[0m > GET: /api/user 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:29:32 AM[0m] [1m[35mRequestLogger[0m [35m[0m > GET: /api/template/count 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:29:32 AM[0m] [1m[35mRequestLogger[0m [35m[0m > GET: /api/template/all 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:29:34 AM[0m] [1m[35mRequestLogger[0m [35m[0m > GET: /api/plugin/my-awesome-plugin/hello 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:30:00 AM[0m] [1m[35mSocketServer[0m [35m.disconnect[0m > Socket "7OuRGP5VpRk0m49WAAAA" has been disconnected. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:30:00 AM[0m] [1m[35mRequestLogger[0m [35m[0m > GET: /dashboard/plugins/my-awesome-plugin 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:30:00 AM[0m] [1m[35mSocketServer[0m [35m.allowConnection[0m > Incoming connection... 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:30:00 AM[0m] [1m[35mSocketServer[0m [35m.connection[0m > Socket "spPRuJYcMTENZxg-AAAB" for group "global" connected successfully. 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:30:00 AM[0m] [1m[35mRequestLogger[0m [35m[0m > GET: /api/plugin/my-awesome-plugin/hello 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:30:00 AM[0m] [1m[35mRequestLogger[0m [35m[0m > GET: /api/user 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:30:00 AM[0m] [1m[35mRequestLogger[0m [35m[0m > GET: /api/template/count 
+[47m[30m[INFO][0m [[36m10/13/2020, 10:30:00 AM[0m] [1m[35mRequestLogger[0m [35m[0m > GET: /api/template/all 
