@@ -2,7 +2,7 @@ const { BCMSConfigBuilder } = require('@becomes/cms-bundler');
 
 module.exports = BCMSConfigBuilder({
   backend: {
-    port: 1282,
+    port: 1280,
     security: {
       jwt: {
         issuer: 'localhost',
@@ -10,17 +10,17 @@ module.exports = BCMSConfigBuilder({
       },
     },
     database: {
-      // fs: 'bcms',
-      mongodb: {
-        selfHosted: {
-          host: 'localhost',
-          port: 27017,
-          name: 'test',
-          user: 'test',
-          password: 'test1234',
-          prefix: 'bcms',
-        },
-      },
+      fs: 'bcms',
+      // mongodb: {
+      //   selfHosted: {
+      //     host: 'localhost',
+      //     port: 27017,
+      //     name: 'test',
+      //     user: 'test',
+      //     password: 'test1234',
+      //     prefix: 'bcms',
+      //   },
+      // },
     },
   },
   plugins: [
