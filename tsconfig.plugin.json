@@ -7,11 +7,10 @@
     "experimentalDecorators": true,
     "target": "es5",
     "sourceMap": true,
+    "outDir": "./plugins/ember/backend",
     "baseUrl": "./",
-    "outDir": "dist/backend",
-    "incremental": true,
-    "esModuleInterop": true
+    "incremental": true
   },
-  "include": ["plugin/backend/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/backend/**/*"],
+  "exclude": ["node_modules", "dist"],
 }

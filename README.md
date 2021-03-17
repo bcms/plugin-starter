@@ -1,32 +1,105 @@
-# BCMS - Plugin Starter
+*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
-If there is a need to add custom functionality to the BCMS, there are 2 options:
+---
 
-- Simple one is to create [functions](https://github.com/becomesco/cms#functions), [events](https://github.com/becomesco/cms#events) and/or [jobs](https://github.com/becomesco/cms#jobs) to implement some custom functionality,
-- The other one is by create a BCMS Plugin, which is explained in this document.
+# svelte app
 
-Plugins are powerful yet simple to develop. In addition to that they are encapsulated, therefore if is highly unlikely to make the BCMS unstable.
+This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
 
-Each BCMS Plugin (in continuation of the document just Plugin) can consist of 2 parts:
+To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
 
-- Backend - exposes backend API and alow creation of new REST APIs, access to the database and caching system,
-- Frontend/UI - exposes UI API, SDK and components so creating custom UI is very simple and fast. It is important to have in mind that a Plugin cannot edit existing UI elements because it is encapsulated and available on the separate route `/dashboard/plugins/{PLUGIN_NAME}`.
+```bash
+npx degit sveltejs/template svelte-app
+cd svelte-app
+```
 
-## Getting Started
+*Note that you will need to have [Node.js](https://nodejs.org) installed.*
 
-- Clone this repository: `git clone git@github.com:becomesco/cms-plugin-starter my-bcms-plugin`,
-- Install project dependencies: `npm i`,
-- Start a backend development server: `npm run dev:backend`,
-- On other terminal window/tab, start a frontend development server: `npm tun dev:ui`. Have in mind that UI requires a backend to be developed.
-- Open browser and navigate to `localhost:1280` and you will see screen from the Figure 1. Server secret will be printed in the backend console and you can copy/paste while other information is defined by you.
 
-![Figure 1](/assets/readme/fig1.png)
+## Get started
 
-*Figure 1 - Create admin screen.*
+Install the dependencies...
 
-- Once admin user is created, you will be redirected to the dashboard. If you want to share database with the other members of the development team, remove `bcms.db.json` from the `.gitignore` file.
-- The Plugin is located under **Plugins** section of the side navigation. If you haven't modified the code from the repository, you will see the same screen like shown in Figure 2.
+```bash
+cd svelte-app
+npm install
+```
 
-![Figure 2](/assets/readme/fig2.png)
+...then start [Rollup](https://rollupjs.org):
 
-*Figure 2 - Plugin screen*
+```bash
+npm run dev
+```
+
+Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+
+By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+
+If you're using [Visual Studio Code](https://code.visualstudio.com/) we recommend installing the official extension [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode). If you are using other editors you may need to install a plugin in order to get syntax highlighting and intellisense.
+
+## Building and running in production mode
+
+To create an optimised version of the app:
+
+```bash
+npm run build
+```
+
+You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
+
+
+## Single-page app mode
+
+By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
+
+If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
+
+```js
+"start": "sirv public --single"
+```
+
+## Using TypeScript
+
+This template comes with a script to set up a TypeScript development environment, you can run it immediately after cloning the template with:
+
+```bash
+node scripts/setupTypeScript.js
+```
+
+Or remove the script via:
+
+```bash
+rm scripts/setupTypeScript.js
+```
+
+## Deploying to the web
+
+### With [Vercel](https://vercel.com)
+
+Install `vercel` if you haven't already:
+
+```bash
+npm install -g vercel
+```
+
+Then, from within your project folder:
+
+```bash
+cd public
+vercel deploy --name my-project
+```
+
+### With [surge](https://surge.sh/)
+
+Install `surge` if you haven't already:
+
+```bash
+npm install -g surge
+```
+
+Then, from within your project folder:
+
+```bash
+npm run build
+surge public my-project.surge.sh
+```

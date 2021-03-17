@@ -1,34 +1,16 @@
-const { BCMSConfigBuilder } = require('@becomes/cms-bundler');
+const {BCMSConfigBuilder} = require('@becomes/cms-bundler');
 
 module.exports = BCMSConfigBuilder({
-  backend: {
-    port: 1280,
-    security: {
-      jwt: {
-        issuer: 'localhost',
-        secret: 'secret',
-      },
-    },
-    database: {
-      fs: 'bcms',
-      // mongodb: {
-      //   selfHosted: {
-      //     host: 'localhost',
-      //     port: 27017,
-      //     name: 'test',
-      //     user: 'test',
-      //     password: 'test1234',
-      //     prefix: 'bcms',
-      //   },
-      // },
-    },
+  database: {
+    fs: 'bcms',
   },
-  plugins: [
-    {
-      name: 'my-awesome-plugin',
-      frontend: {
-        displayName: 'My Awesome Plugin',
-      },
-    },
-  ],
-});
+  port: 1280,
+  plugins: ['ember'],
+  security: {
+    jwt: {
+      expireIn: 120000,
+      issuer: 'localhost',
+      secret: 'secret'
+    }
+  }
+})

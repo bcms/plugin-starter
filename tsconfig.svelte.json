@@ -3,6 +3,6 @@
   "compilerOptions": {
     "experimentalDecorators": true
   },
-  "include": ["src/**/*"],
+  "include": ["src/ui/**/*"],
   "exclude": ["node_modules/*", "__sapper__/*", "public/*"]
 }
