@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "target": "es5",
     "sourceMap": true,
-    "outDir": "./plugins/ember/backend",
+    "outDir": "./dist/backend",
     "baseUrl": "./",
     "incremental": true
   },

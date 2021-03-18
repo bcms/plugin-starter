@@ -1,16 +1,23 @@
 {
-  "name": "svelte-app",
+  "name": "@becomes/cms-plugin-starter",
   "version": "1.0.0",
-  "private": true,
+  "description": "Starter project for developing a plugin for the BCMS.",
+  "author": "becomes.co",
   "scripts": {
     "start": "sirv public",
     "start:backend": "bcms --backend",
-    "build": "rollup -c",
-    "build:plugin": "tsc -p tsconfig.plugin.json",
-    "dev": "rollup -c -w",
-    "dev:backend": "npm run build:plugin && npm run start:backend",
+    "build:ui": "npm run build:backend && rollup -c",
+    "build:backend": "tsc -p tsconfig.plugin.json",
+    "dev:ui": "rollup -c -w",
+    "dev:backend": "nodemon backend.js",
     "check": "svelte-check --fail-on-warnings --fail-on-hints --workspace src",
-    "lint": "eslint ./src --ext .ts"
+    "lint": "eslint ./src --ext .ts",
+    "bundle": "node tools.js --bundle",
+    "publish": "node tools.js --publish",
+    "link": "node tools.js --link",
+    "link:sudo": "node tools.js --link --sudo",
+    "unlink": "node tools.js --unlink",
+    "unlink:sudo": "node tools.js --unlink --sudo"
   },
   "devDependencies": {
     "@becomes/purple-cheetah": "^2.0.28",
@@ -24,7 +31,9 @@
     "@typescript-eslint/parser": "^4.18.0",
     "eslint-plugin-svelte3": "^3.1.2",
     "express": "^4.17.1",
+    "nodemon": "^2.0.7",
     "rollup": "^2.3.4",
+    "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-css-only": "^3.1.0",
     "rollup-plugin-livereload": "^2.0.0",
     "rollup-plugin-svelte": "^7.0.0",
@@ -36,5 +45,19 @@
     "tslib": "^2.0.0",
     "typescript": "^4.0.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/becomesco/cms-plugin-starter.git"
+  },
+  "bugs": {
+    "url": "https://github.com/becomesco/cms-plugin-starter/issues"
+  },
+  "homepage": "https://github.com/becomesco/cms-plugin-starter#readme",
+  "nodemonConfig": {
+    "watch": [
+      "src/backend"
+    ],
+    "ext": "ts"
+  }
 }

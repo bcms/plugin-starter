@@ -5,7 +5,7 @@ module.exports = BCMSConfigBuilder({
     fs: 'bcms',
   },
   port: 1280,
-  plugins: ['ember'],
+  plugins: ['__local__:ember'],
   security: {
     jwt: {
       expireIn: 120000,

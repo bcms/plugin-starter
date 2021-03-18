@@ -17,7 +17,7 @@ export class EmberController implements ControllerPrototype {
   @Get("/test")
   test() {
     return {
-      message: "This is a message from Ember plugin.",
+      message: "This is a message from Ember PLUGIN.",
     };
   }
 }

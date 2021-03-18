@@ -2,6 +2,7 @@
 /public
 /plugins
 /logs
+/dist
 
 
 .DS_Store
