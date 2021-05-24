@@ -1,6 +1,12 @@
 import { createApp } from 'vue';
-import App from './App.vue';
+import type { BCMSGlobalScopeMain } from '@becomes/cms-ui/types';
+import App from './ui/App.vue';
+import './ui/assets/styles/main.scss';
 
-console.log('HERE');
+declare global {
+  interface Window {
+    bcms: BCMSGlobalScopeMain;
+  }
+}
 
 createApp(App).mount(`#bcms_plugin_${process.env.VUE_APP_PLUGIN_NAME}`);
