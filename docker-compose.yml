@@ -31,7 +31,7 @@ services:
         target: /app/bcms.config.js
       - type: bind
         source: ./src/backend
-        target: /app/plugins/hello-world/backend
+        target: /app/plugins/plugin---name/backend
       - type: bind
         source: ./bcms.db.json
         target: /app/bcms.db.json
@@ -64,4 +64,4 @@ services:
         source: ./src
         target: /app/src
     environment:
-      - VUE_APP_PLUGIN_NAME=hello-world
+      - VUE_APP_PLUGIN_NAME=plugin---name

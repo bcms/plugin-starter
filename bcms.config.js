@@ -1,4 +1,4 @@
-const pluginName = 'hello-world';
+const pluginName = 'plugin---name';
 process.env.VUE_APP_PLUGIN_NAME = pluginName;
 
 module.exports = {
