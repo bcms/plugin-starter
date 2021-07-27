@@ -2,4 +2,5 @@
 /dist
 /uploads
 /proxy
-/bcms.db.json
+/db
+/uploads

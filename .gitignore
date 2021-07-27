@@ -4,6 +4,8 @@ node_modules
 /lib
 /uploads
 /bcms.db.json
+/db
+/uploads
 
 
 # local env files

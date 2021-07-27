@@ -4,9 +4,6 @@ services:
     build: 'proxy/.'
     ports:
       - '8080:8080'
-      - '8081:8081'
-      - '8082:8082'
-      - '35729:35729'
     logging:
       driver: none
   shim:
@@ -23,8 +20,8 @@ services:
     image: 'becomes/cms-backend-local'
     ports:
       - '1280:1280'
-    logging:
-      driver: none
+    # logging:
+    #   driver: none
     volumes:
       - type: bind
         source: ./bcms.config.js
@@ -33,21 +30,17 @@ services:
         source: ./src/backend
         target: /app/plugins/plugin---name/backend
       - type: bind
-        source: ./bcms.db.json
-        target: /app/bcms.db.json
+        source: ./db
+        target: /app/db
       - type: bind
         source: ./uploads
         target: /app/uploads
-      - type: bind
-        source: ./node_modules/@becomes/cms-ui
-        target: /app/node_modules/@becomes/cms-ui
     environment:
-      - API_PORT=1280
-      - DB_PRFX=bcms
-      - DB_USE_FS=true
-      - JWT_ISSUER=localhost
+      - PORT=1280
+      - JWT_SCOPE=localhost
       - JWT_SECRET=secret
       - JWT_EXP_AFTER=30000000
+      - DB_PRFX=bcms
       - BCMS_LOCAL=true
       - BCMS_INSTANCE_ID=604f489af0db82500f17076d
   plugin:
@@ -63,5 +56,3 @@ services:
       - type: bind
         source: ./src
         target: /app/src
-    environment:
-      - VUE_APP_PLUGIN_NAME=plugin---name

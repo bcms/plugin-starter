@@ -2,16 +2,15 @@ const pluginName = 'plugin---name';
 process.env.VUE_APP_PLUGIN_NAME = pluginName;
 
 module.exports = {
-  port: 1280,
-  security: {
-    jwt: {
-      issuer: 'localhost',
-      secret: 'secret',
-      expireIn: 30000000,
-    },
+  port: parseInt(process.env.PORT, 10),
+  jwt: {
+    expireIn: parseInt(process.env.JWT_EXP_AFTER, 10),
+    scope: process.env.JWT_SCOPE,
+    secret: process.env.JWT_SECRET,
   },
   database: {
-    fs: 'bcms',
+    prefix: process.env.DB_PRFX,
+    fs: true,
   },
   plugins: [pluginName],
 };

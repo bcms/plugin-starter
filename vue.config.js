@@ -1,6 +1,6 @@
-const bcmsConfig = require('./bcms.config.js');
+const pluginName = 'plugin---name';
 
 module.exports = {
   lintOnSave: false,
-  publicPath: `/plugin/${process.env.VUE_APP_PLUGIN_NAME}/`,
+  publicPath: `/plugin/${pluginName}/`,
 };
