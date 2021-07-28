@@ -30,6 +30,9 @@ services:
         source: ./src/backend
         target: /app/plugins/plugin---name/backend
       - type: bind
+        source: ./node_modules/@becomes/cms-ui/public
+        target: /app/public
+      - type: bind
         source: ./db
         target: /app/db
       - type: bind

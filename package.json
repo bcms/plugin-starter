@@ -16,7 +16,7 @@
   "devDependencies": {
     "@becomes/cms-backend": "file:packs/bcms-backend.tgz",
     "@becomes/cms-ui": "file:packs/bcms-ui.tgz",
-    "@becomes/purple-cheetah": "file:packs/purple-cheetah.tgz",
+    "@becomes/purple-cheetah": "file:packs/purple-cheetah/core.tgz",
     "@types/node": "^15.6.2",
     "@typescript-eslint/eslint-plugin": "^4.28.5",
     "@typescript-eslint/parser": "^4.28.5",

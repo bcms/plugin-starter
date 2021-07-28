@@ -1,7 +1,7 @@
 import { HelloWorldController } from './controllers';
-import { createBcmsPlugin } from './_helper';
+import { createBcmsPlugin } from '@bcms/plugin';
 
-export const plugin = createBcmsPlugin({
+export default createBcmsPlugin({
   name: 'Hello world',
   controllers: [HelloWorldController],
 });
