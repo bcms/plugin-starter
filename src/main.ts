@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 import type { BCMSGlobalScopeMain } from '@becomes/cms-ui/types';
-import App from './app.vue';
-import './assets/styles/main.scss';
+import App from '@/app.vue';
+import '@/assets/styles/main.scss';
 
 declare global {
   interface Window {

@@ -14,8 +14,9 @@
     "types": ["webpack-env"],
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "paths": {
+      "@/*": ["./ui/*"],
       "@bcms/*": ["node_modules/@becomes/cms-backend/*"]
-    },
+    }
   },
   "include": [
     "src/**/*.ts",
