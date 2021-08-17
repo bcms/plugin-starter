@@ -1,4 +1,4 @@
-const pluginName = 'plugin---name';
+const pluginName = process.env.VUE_APP_PLUGIN_NAME;
 
 module.exports = {
   lintOnSave: false,

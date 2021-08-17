@@ -28,7 +28,7 @@ services:
         target: /app/bcms.config.js
       - type: bind
         source: ./src/backend
-        target: /app/plugins/plugin---name/backend
+        target: /app/plugins/hello---world/backend
       - type: bind
         source: ./node_modules/@becomes/cms-ui/public
         target: /app/public
