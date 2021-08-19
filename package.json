@@ -32,9 +32,13 @@
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.14.0",
+    "module-alias": "^2.2.2",
     "node-sass": "^4.12.0",
     "prettier": "^2.3.2",
     "sass-loader": "^8.0.2",
     "typescript": "^4.3.5"
+  },
+  "_moduleAliases": {
+    "@becomes/cms-backend": "@becomes/cms-backend"
   }
 }
