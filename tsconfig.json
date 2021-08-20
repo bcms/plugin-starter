@@ -14,8 +14,7 @@
     "types": ["webpack-env"],
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "paths": {
-      "@bcms-components*": ["node_modules/@becomes/cms-ui/components"],
-      "@bcms/*": ["node_modules/@becomes/cms-backend/*"]
+      "@bcms-components*": ["node_modules/@becomes/cms-ui/components"]
     }
   },
   "include": [
@@ -26,5 +25,5 @@
     "tests/**/*.tsx",
     "node_modules/@becomes/cms-ui/**/*.vue",
     "node_modules/@becomes/cms-ui/**/*.ts"
-  ],
+  ]
 }

@@ -9,14 +9,14 @@ import './ui/assets/styles/main.scss';
 declare global {
   interface Window {
     bcms: BCMSGlobalScopeMain;
+    pluginName: string;
   }
 }
+
+window.pluginName = 'bcms-plugin---name';
 
 const app = createApp(App);
 app.directive('cy', cy);
 app.directive('clickOutside', clickOutside);
 app.directive('tooltip', tooltip);
-app
-  .use(store)
-  .use(router)
-  .mount(`#bcms_plugin_${process.env.VUE_APP_PLUGIN_NAME}`);
+app.use(store).use(router).mount(`#bcms_plugin_bcms-plugin---name`);

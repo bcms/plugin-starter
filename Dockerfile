@@ -6,4 +6,4 @@ COPY . /app
 
 RUN npm i
 
-ENTRYPOINT [ "npm", "run", "dev" ]
+ENTRYPOINT [ "npm", "run", "dev:vue" ]

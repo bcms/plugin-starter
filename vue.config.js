@@ -1,4 +1,4 @@
-const pluginName = process.env.VUE_APP_PLUGIN_NAME;
+const pluginName = 'bcms-plugin---name';
 
 module.exports = {
   lintOnSave: false,

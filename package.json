@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vue-cli-service serve --host 0.0.0.0 --port 1281",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "dev:vue": "vue-cli-service serve --host 0.0.0.0 --port 1281",
+    "build:vue": "vue-cli-service build --dest dist/ui",
+    "lint:vue": "vue-cli-service lint",
+    "build:backend": "tsc --project tsconfig.backend.json",
+    "bundle": "bcms --bundle --plugin"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "core-js": "^3.15.2",
     "vue": "^3.1.5",
     "vue-router": "^4.0.10",
-    "vuex": "^4.0.2"
-  },
-  "devDependencies": {
+    "vuex": "^4.0.2",
     "@becomes/cms-backend": "file:packs/bcms-backend.tgz",
     "@becomes/cms-ui": "file:packs/bcms-ui.tgz",
     "@becomes/purple-cheetah": "^3.1.1",
@@ -36,6 +37,8 @@
     "node-sass": "^4.12.0",
     "prettier": "^2.3.2",
     "sass-loader": "^8.0.2",
+    "tsconfig-paths": "^3.10.1",
+    "tscpaths": "0.0.9",
     "typescript": "^4.3.5"
   },
   "_moduleAliases": {

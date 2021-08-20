@@ -1,9 +1,6 @@
 require('module-alias/register');
 const { createBcmsConfig } = require('@becomes/cms-backend');
 
-const pluginName = 'hello---world';
-process.env.VUE_APP_PLUGIN_NAME = pluginName;
-
 module.exports = createBcmsConfig({
   port: process.env.PORT ? parseInt(process.env.PORT, 10) : 1280,
   jwt: {
@@ -17,5 +14,9 @@ module.exports = createBcmsConfig({
     prefix: process.env.DB_PRFX || 'bcms',
     fs: true,
   },
-  plugins: [pluginName],
+  plugins: ['bcms-plugin---name'],
+  /**
+   * Only letters and numbers are allowed in plugin name.
+   */
+  pluginName: 'Hello World'
 });
