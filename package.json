@@ -11,10 +11,6 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "core-js": "^3.15.2",
-    "vue": "^3.1.5",
-    "vue-router": "^4.0.10",
-    "vuex": "^4.0.2",
     "@becomes/cms-backend": "file:packs/bcms-backend.tgz",
     "@becomes/cms-ui": "file:packs/bcms-ui.tgz",
     "@becomes/purple-cheetah": "^3.1.1",
@@ -30,6 +26,7 @@
     "@vue/compiler-sfc": "^3.1.5",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
+    "core-js": "^3.15.2",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^7.14.0",
@@ -39,7 +36,10 @@
     "sass-loader": "^8.0.2",
     "tsconfig-paths": "^3.10.1",
     "tscpaths": "0.0.9",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "vue": "^3.1.5",
+    "vue-router": "^4.0.10",
+    "vuex": "^4.0.2"
   },
   "_moduleAliases": {
     "@becomes/cms-backend": "@becomes/cms-backend"
