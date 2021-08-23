@@ -2,13 +2,11 @@ import {
   createController,
   createControllerMethod,
 } from '@becomes/purple-cheetah';
-import { useUserRepository } from '@becomes/cms-backend/user';
 
 export const HelloWorldController = createController({
   path: '/',
   name: 'Hello world controller',
   methods() {
-    useUserRepository();
     return {
       sayHi: createControllerMethod<unknown, { message: string }>({
         path: '/hi',
