@@ -1,24 +1,14 @@
-# starter
+# BCMS - Plugin Starter
 
-## Project setup
-```
-npm install
-```
+This project will help you to develop a BCMS plugin. Plugin, in context of the BCMS, is a software which is packed in a specific way and has direct access to internal API of the BCMS backend and the UI.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Getting started
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- You will need to have Node, NPM, Docker and Docker Compose installed on your system,
+- Create empty directories `db` as `uploads` in the root of the project (this directories will be used by the backend), 
+- To start a development server by running: `docker-compose up`
+- Have in mind that if you change anything outside of the `src` directory, you will need to run `docker-compose build`
 
-### Lints and fixes files
-```
-npm run lint
-```
+## Bundling plugin
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+When you are done with development and you are ready to use the plugin in the production, run `npm run bundle`. This will create package of your plugin which you can copy to the BCMS project or upload it to the instance using BCMS Cloud Dashboard.
