@@ -5,8 +5,9 @@ This project will help you to develop a BCMS plugin. Plugin, in context of the B
 ## Getting started
 
 - You will need to have Node, NPM, Docker and Docker Compose installed on your system,
-- Create empty directories `db` as `uploads` in the root of the project (this directories will be used by the backend), 
-- To start a development server by running: `docker-compose up`
+- Create empty directories `db` and `uploads` in the root of the project (this directories will be used by the backend), 
+- To start a development server run: `docker-compose up`
+- **IMPORTANT:** application will be available on port **8080**, ports with are printed in the console are for internal us. We are working making the more clear and abstracting internal ports. 
 - Have in mind that if you change anything outside of the `src` directory, you will need to run `docker-compose build`
 
 ## Bundling plugin
