@@ -3,21 +3,22 @@ services:
   proxy:
     build: 'proxy/.'
     ports:
+      - '3000:3000'
       - '8080:8080'
     logging:
       driver: none
   shim:
     depends_on:
       - proxy
-    image: 'becomes/cms-shim-local'
+    image: 'becomes/cms-shim-local:1.0.1'
     ports:
       - '1282:1282'
-    logging:
-      driver: none
+    # logging:
+    #   driver: none
   backend:
     depends_on:
       - shim
-    image: 'becomes/cms-backend-local'
+    image: 'becomes/cms-backend-local:1.0.2'
     ports:
       - '1280:1280'
     # logging:
@@ -38,20 +39,14 @@ services:
       - type: bind
         source: ./uploads
         target: /app/uploads
-    environment:
-      - PORT=1280
-      - JWT_SCOPE=localhost
-      - JWT_SECRET=secret
-      - JWT_EXP_AFTER=30000000
-      - DB_PRFX=bcms
-      - BCMS_LOCAL=true
-      - BCMS_INSTANCE_ID=604f489af0db82500f17076d
   plugin:
     depends_on:
       - backend
     build: .
     ports:
       - '1281:1281'
+    logging:
+      driver: none
     volumes:
       - type: bind
         source: ./public
