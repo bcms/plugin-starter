@@ -13,16 +13,14 @@ services:
     image: 'becomes/cms-shim-local:1.0.1'
     ports:
       - '1282:1282'
-    # logging:
-    #   driver: none
+    logging:
+      driver: none
   backend:
     depends_on:
       - shim
     image: 'becomes/cms-backend-local:1.0.2'
     ports:
       - '1280:1280'
-    # logging:
-    #   driver: none
     volumes:
       - type: bind
         source: ./bcms.config.js
@@ -45,8 +43,6 @@ services:
     build: .
     ports:
       - '1281:1281'
-    logging:
-      driver: none
     volumes:
       - type: bind
         source: ./public
