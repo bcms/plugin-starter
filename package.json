@@ -13,6 +13,7 @@
   "devDependencies": {
     "@becomes/cms-backend": "file:packs/bcms-backend.tgz",
     "@becomes/cms-cli": "file:packs/bcms-cli.tgz",
+    "@becomes/cms-sdk": "file:packs/bcms-sdk.tgz",
     "@becomes/cms-ui": "file:packs/bcms-ui.tgz",
     "@becomes/purple-cheetah": "^3.1.5",
     "@types/node": "^15.14.9",
