@@ -7,7 +7,8 @@
     "build:vue": "vue-cli-service build --dest dist/ui",
     "lint:vue": "vue-cli-service lint",
     "build:backend": "tsc --project tsconfig.backend.json",
-    "bundle": "bcms --bundle --plugin"
+    "bundle": "bcms --plugin bundle",
+    "deploy": "bcms --plugin deploy"
   },
   "devDependencies": {
     "@becomes/cms-backend": "^3.0.0-alpha.3",
