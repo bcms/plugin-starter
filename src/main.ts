@@ -9,6 +9,8 @@ import './ui/assets/styles/main.scss';
 declare global {
   interface Window {
     bcms: BCMSGlobalScopeMain;
+    editorNodeEnter: (data: { element: HTMLElement }) => void;
+    editorNodeLeave: () => void;
     pluginName: string;
   }
 }
