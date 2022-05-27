@@ -3,7 +3,7 @@ import { defineComponent } from '@vue/runtime-core';
 
 const component = defineComponent({
   setup() {
-    return () => <>Page 2</>;
+    return () => <>This is page 2.</>;
   },
 });
 export default component;

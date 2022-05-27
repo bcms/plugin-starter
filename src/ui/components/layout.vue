@@ -1,6 +1,6 @@
 <script lang="tsx">
-import { BCMSLink } from '@becomes/cms-ui/components';
 import { defineComponent, PropType } from '@vue/runtime-core';
+import { RouterLink } from 'vue-router';
 import { LayoutSideNavItem } from '../types';
 
 const component = defineComponent({
@@ -16,12 +16,9 @@ const component = defineComponent({
           <div class="layout--sideNav">
             {props.sideNavItems.map((item) => {
               return (
-                <BCMSLink
-                  href={`${route.value.path}${item.hash}`}
-                  onClick={item.onClick}
-                >
+                <RouterLink to={`${route.value.path}${item.hash}`}>
                   {item.name}
-                </BCMSLink>
+                </RouterLink>
               );
             })}
           </div>
