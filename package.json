@@ -8,12 +8,14 @@
     "lint:vue": "vue-cli-service lint",
     "build:backend": "tsc --project tsconfig.backend.json",
     "bundle": "bcms --plugin bundle",
-    "deploy": "bcms --plugin deploy"
+    "deploy": "bcms --plugin deploy",
+    "login": "bcms --login"
   },
   "devDependencies": {
-    "@becomes/cms-backend": "^3.0.0-alpha.3",
-    "@becomes/cms-sdk": "^3.0.0-alpha.1",
-    "@becomes/cms-ui": "^3.0.0-alpha.2",
+    "@becomes/cms-backend": "^3.0.0-alpha.4",
+    "@becomes/cms-cli": "^2.2.4",
+    "@becomes/cms-sdk": "^3.0.0-alpha.5",
+    "@becomes/cms-ui": "^3.0.0-alpha.19",
     "@becomes/purple-cheetah": "^3.5.1",
     "@types/node": "^15.14.9",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
