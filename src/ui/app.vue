@@ -1,25 +1,17 @@
 <script lang="tsx">
 import { defineComponent } from 'vue';
-import RouterView from './router/view.vue';
-import { Layout } from './components';
+import { RouterView } from 'vue-router';
+import { Layout } from './layout';
 
 const component = defineComponent({
   setup() {
     return () => (
-      <Layout
-        sideNavItems={[
-          {
-            name: 'Home',
-            hash: '',
-          },
-          {
-            name: 'Page 2',
-            hash: '#page-2',
-          },
-        ]}
-      >
-        <RouterView />
-      </Layout>
+      <>
+        <div id="plugin_nav" />
+        <Layout>
+          <RouterView />
+        </Layout>
+      </>
     );
   },
 });

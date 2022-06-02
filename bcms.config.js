@@ -6,7 +6,7 @@ module.exports = createBcmsConfig({
   jwt: {
     expireIn: process.env.JWT_EXP_AFTER
       ? parseInt(process.env.JWT_EXP_AFTER, 10)
-      : 60000,
+      : 600000000,
     scope: process.env.JWT_SCOPE || 'localhost',
     secret: process.env.JWT_SECRET || 'secret',
   },
@@ -15,8 +15,4 @@ module.exports = createBcmsConfig({
     fs: true,
   },
   plugins: ['bcms-plugin---name'],
-  /**
-   * Only letters and numbers are allowed in plugin name.
-   */
-  pluginName: 'Hello World'
 });

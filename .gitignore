@@ -6,8 +6,10 @@ node_modules
 /bcms.db.json
 /db
 /uploads
+/bngine-workspace
+/storage
 /logs
-/dev-logs
+/backend-logs
 
 
 # local env files

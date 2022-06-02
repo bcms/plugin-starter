@@ -1,26 +1,21 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory } from 'vue-router';
 import Home from '../views/home.vue';
-
-const baseUri = '/dashboard/plugin/bcms-plugin---name';
-const routes: Array<RouteRecordRaw> = [
-  {
-    path: `${baseUri}`,
-    name: 'Home',
-    component: Home,
-  },
-  {
-    path: `${baseUri}#page-2`,
-    name: 'Page 2',
-    component: () =>
-      import(
-        /* webpackChunkName: "bcms-plugin---name-home" */ '../views/page-2.vue'
-      ),
-  },
-];
+import Page2 from '../views/page-2.vue';
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes,
+  history: createWebHashHistory('/dashboard/plugin/bcms-plugin---name'),
+  routes: [
+    {
+      path: '/',
+      name: 'Home',
+      component: Home,
+    },
+    {
+      path: '/page-2',
+      name: 'Page2',
+      component: Page2,
+    },
+  ],
 });
 
 export default router;

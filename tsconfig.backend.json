@@ -12,7 +12,6 @@
     "outDir": "./dist/backend",
     "baseUrl": ".",
     "rootDir": "src/backend",
-    "importsNotUsedAsValues": "error",
     "skipLibCheck": true,
     "paths": {
       "@bcms": ["node_modules/@becomes/cms-backend/src"],

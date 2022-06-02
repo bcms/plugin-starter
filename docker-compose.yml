@@ -18,15 +18,16 @@ services:
   backend:
     depends_on:
       - shim
-    image: 'becomes/cms-backend-local:1.0.19'
+    image: 'becomes/cms-backend-local:1.0.20'
     ports:
       - '1280:8080'
-    # logging:
-    #   driver: none
     volumes:
       - type: bind
         source: ./bcms.config.js
         target: /app/bcms.config.js
+      - type: bind
+        source: ./bngine-api.spec.yml
+        target: /app/bngine-api.spec.yml
       - type: bind
         source: ./shim.json
         target: /app/shim.json
@@ -34,22 +35,28 @@ services:
         source: ./src/backend
         target: /app/plugins/bcms-plugin---name/backend
       - type: bind
+        source: ./node_modules/@becomes/cms-ui/public
+        target: /app/public
+      - type: bind
         source: ./db
         target: /app/db
       - type: bind
         source: ./uploads
         target: /app/uploads
       - type: bind
-        source: './dev-logs'
-        target: '/app/logs'
+        source: ./storage
+        target: /app/storage
+      - type: bind
+        source: ./backend-logs
+        target: /app/backend-logs
   plugin:
     depends_on:
       - backend
     build: .
-    logging:
-      driver: none
     ports:
-      - '1281:1281'
+      - '1281:8080'
+    # logging:
+    #   driver: none
     volumes:
       - type: bind
         source: ./public
@@ -57,3 +64,6 @@ services:
       - type: bind
         source: ./src
         target: /app/src
+      - type: bind
+        source: ./tailwind.config.js
+        target: /app/tailwind.config.js
