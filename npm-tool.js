@@ -12,7 +12,7 @@ module.exports = createConfig({
         {
           title: 'Setup directories',
           task: async () => {
-            const dirList = ['db', 'logs', 'backend-logs', 'uploads'];
+            const dirList = ['db', 'logs', 'backend-logs', 'uploads', 'storage'];
             for (let i = 0; i < dirList.length; i++) {
               const dir = dirList[i];
               if (!(await fs.exist(dir))) {
