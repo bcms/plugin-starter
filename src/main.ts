@@ -1,14 +1,13 @@
 import { createApp } from 'vue';
 import type { BCMSGlobalScopeMain } from '@becomes/cms-ui/types';
 import { cy, clickOutside, tooltip } from '@becomes/cms-ui/directives';
-import App from './ui/app.vue';
+import App from './ui/app';
 import router from './ui/router';
 import '@becomes/cms-ui/styles/_main.scss';
 import './ui/styles/_main.scss';
 
 declare global {
   interface Window {
-    // Is declared in components/content/node-nav.vue
     editorNodeEnter(data: { element: HTMLElement }): void;
     editorNodeLeave(data: { element: HTMLElement }): void;
 
