@@ -10,15 +10,15 @@ services:
   shim:
     depends_on:
       - proxy
-    image: 'becomes/cms-shim-local:1.0.6'
+    image: 'becomes/cms-shim-local:1.0.5'
     ports:
       - '1279:1279'
-    logging:
-      driver: none
+    # logging:
+    #   driver: none
   backend:
     depends_on:
       - shim
-    image: 'becomes/cms-backend-local:1.0.27'
+    image: 'becomes/cms-backend-local:1.0.28'
     ports:
       - '1280:8080'
     volumes:
@@ -52,8 +52,8 @@ services:
     build: .
     ports:
       - '1281:8080'
-    # logging:
-    #   driver: none
+    logging:
+      driver: none
     volumes:
       - type: bind
         source: ./public
