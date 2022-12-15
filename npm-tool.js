@@ -12,7 +12,13 @@ module.exports = createConfig({
         {
           title: 'Setup directories',
           task: async () => {
-            const dirList = ['db', 'logs', 'backend-logs', 'uploads', 'storage'];
+            const dirList = [
+              'db',
+              'logs',
+              'backend-logs',
+              'uploads',
+              'storage',
+            ];
             for (let i = 0; i < dirList.length; i++) {
               const dir = dirList[i];
               if (!(await fs.exist(dir))) {
@@ -22,6 +28,21 @@ module.exports = createConfig({
           },
         },
       ]).run();
+    },
+    '--fix:db': async () => {
+      const files = await fs.fileTree(['db', 'bcms'], '');
+      for (let i = 0; i < files.length; i++) {
+        const fileInfo = files[i];
+        if (fileInfo.path.abs.endsWith('.json')) {
+          const items = JSON.parse(await fs.readString(fileInfo.path.abs));
+          const json = {};
+          for (let j = 0; j < items.length; j++) {
+            const item = items[j];
+            json[item._id] = item;
+          }
+          await fs.save(fileInfo.path.abs, JSON.stringify(json, null, '  '));
+        }
+      }
     },
   },
 });
