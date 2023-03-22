@@ -1,3 +1,5 @@
+const path = require('path');
+const { ChildProcess } = require('@banez/child_process');
 const { createConfig, createTasks } = require('@banez/npm-tool');
 const { createFS } = require('@banez/fs');
 
@@ -29,19 +31,48 @@ module.exports = createConfig({
         },
       ]).run();
     },
-    '--fix:db': async () => {
-      const files = await fs.fileTree(['db', 'bcms'], '');
-      for (let i = 0; i < files.length; i++) {
-        const fileInfo = files[i];
-        if (fileInfo.path.abs.endsWith('.json')) {
-          const items = JSON.parse(await fs.readString(fileInfo.path.abs));
-          const json = {};
-          for (let j = 0; j < items.length; j++) {
-            const item = items[j];
-            json[item._id] = item;
-          }
-          await fs.save(fileInfo.path.abs, JSON.stringify(json, null, '  '));
-        }
+
+    '--dev-ui': async () => {
+      await ChildProcess.spawn('npm', ['run', 'dev'], {
+        cwd: path.join(process.cwd(), 'ui'),
+        stdio: 'inherit',
+      });
+    },
+
+    '--build-ui': async () => {
+      await ChildProcess.spawn('npm', ['run', 'build'], {
+        cwd: path.join(process.cwd(), 'ui'),
+        stdio: 'inherit',
+      });
+    },
+
+    '--build-backend': async () => {
+      await ChildProcess.spawn('tsc', [], {
+        cwd: path.join(process.cwd(), 'backend'),
+        stdio: 'inherit',
+      });
+    },
+
+    '--postinstall': async () => {
+      await ChildProcess.spawn('npm', ['i'], {
+        stdio: 'inherit',
+        cwd: path.join(process.cwd(), 'ui'),
+      });
+      if (await fs.exist(['ui', 'src', 'bcms-ui'])) {
+        await fs.deleteDir(['ui', 'src', 'bcms-ui']);
+      }
+      const bcmsUiBase = ['ui', 'node_modules', '@becomes', 'cms-ui'];
+      const copy = [
+        'components',
+        'directives',
+        'services',
+        'translations',
+        'types',
+        'util',
+      ];
+      for (let i = 0; i < copy.length; i++) {
+        const item = copy[i];
+        await fs.copy([...bcmsUiBase, item], ['ui', 'src', 'bcms-ui', item]);
       }
     },
   },
