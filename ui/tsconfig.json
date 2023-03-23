@@ -18,7 +18,8 @@
     "paths": {
       "@backend/*": ["../backend/*"],
       "@ui/*": ["./src/*"],
-      "@bcms-ui/*": ["./src/bcms-ui/*"]
+      "@bcms-ui/*": ["./src/bcms-ui/*"],
+      "@becomes/cms-backend/*": ["../node_modules/@becomes/cms-backend/src/*"]
     }
   },
   "include": [

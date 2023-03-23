@@ -1,4 +1,4 @@
-import { BCMSConfig } from '@becomes/cms-backend/src/config';
+import { BCMSConfig } from '@becomes/cms-backend/config';
 import type { FSDBRepository } from '@becomes/purple-cheetah-mod-fsdb/types';
 import { createFSDBRepository } from '@becomes/purple-cheetah-mod-fsdb';
 import type { MongoDBCachedRepository } from '@becomes/purple-cheetah-mod-mongodb-mem-cache/types';

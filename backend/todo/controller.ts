@@ -1,8 +1,8 @@
 import type {
   BCMSRouteProtectionJwtAndBodyCheckResult,
   BCMSRouteProtectionJwtResult,
-} from '@becomes/cms-backend/src/types';
-import { BCMSRouteProtection } from '@becomes/cms-backend/src/util';
+} from '@becomes/cms-backend/types';
+import { BCMSRouteProtection } from '@becomes/cms-backend/util';
 import {
   createController,
   createControllerMethod,

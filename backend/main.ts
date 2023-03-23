@@ -1,4 +1,4 @@
-import { createBcmsPlugin } from '@becomes/cms-backend/src/plugin';
+import { createBcmsPlugin } from '@becomes/cms-backend/plugin';
 import { TodoController } from './todo';
 
 export default createBcmsPlugin({

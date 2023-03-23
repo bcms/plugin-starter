@@ -12,7 +12,10 @@
     "outDir": "../dist/backend",
     "baseUrl": ".",
     "rootDir": ".",
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "paths": {
+      "@becomes/cms-backend/*": ["../node_modules/@becomes/cms-backend/src/*"]
+    }
   },
   "include": ["./**/*", "../node_modules/@becomes/cms-backend/**/*.ts"]
 }
