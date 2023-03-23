@@ -51,6 +51,18 @@ module.exports = createConfig({
         cwd: path.join(process.cwd(), 'backend'),
         stdio: 'inherit',
       });
+      const fileTree = await fs.fileTree(['dist', 'backend'], '');
+      for (let i = 0; i < fileTree.length; i++) {
+        const fileInfo = fileTree[i];
+        const file = await fs.readString(fileInfo.path.abs);
+        const fileWithFixedImports = file.replace(
+          /\("@becomes\/cms-backend\/src\//g,
+          '("@becomes/cms-backend/'
+        );
+        if (fileWithFixedImports !== file) {
+          await fs.save(fileInfo.path.abs, fileWithFixedImports);
+        }
+      }
     },
 
     '--postinstall': async () => {
