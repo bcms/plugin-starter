@@ -1,26 +1,15 @@
 version: '3.9'
 services:
-  proxy:
-    build: 'proxy/.'
-    ports:
-      - '3000:3000'
-      - '8080:8080'
-    logging:
-      driver: none
   shim:
-    depends_on:
-      - proxy
+    hostname: bcms-plugin-shim
+    container_name: bcms-plugin-shim
     image: 'becomes/cms-shim-local:1.0.5'
     ports:
-      - '1279:1279'
-    # logging:
-    #   driver: none
+      - 1279:1279
   backend:
-    depends_on:
-      - shim
+    hostname: bcms-plugin-backend
+    container_name: bcms-plugin-backend
     image: 'becomes/cms-backend-local:1.0.33'
-    ports:
-      - '1280:8080'
     volumes:
       - type: bind
         source: ./bcms.config.js
@@ -47,11 +36,9 @@ services:
         source: ./backend-logs
         target: /app/backend-logs
   plugin:
-    depends_on:
-      - backend
+    hostname: bcms-plugin-ui
+    container_name: bcms-plugin-ui
     build: .
-    ports:
-      - '1281:8080'
     volumes:
       - type: bind
         source: ./ui/public
@@ -65,3 +52,11 @@ services:
       - type: bind
         source: ./ui/vite.config.ts
         target: /app/vite.config.ts
+  proxy:
+    depends_on:
+      - shim
+      - backend
+      - plugin
+    build: 'proxy/.'
+    ports:
+      - '8080:8080'
