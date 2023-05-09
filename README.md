@@ -8,7 +8,6 @@ This project will help you to develop a BCMS plugin. Plugin, in context of the B
 - Setup project by running: `npm run setup`,
 - To start a development server run: `docker-compose up`, depending on how Docker Compose was installed, you might need to run `docker compose up`,
 - **IMPORTANT:** application will be available on port **8080**, ports which are printed in the console are for internal us. We are working on making this more clear and abstracting internal ports. 
-- Have in mind that if you change anything outside of the `src` directory, you will need to run `docker-compose build`
 
 ## Bundling plugin
 
